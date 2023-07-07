@@ -33,3 +33,4 @@ USER 10000:10000
 COPY --from=builder --chown=nonroot:nonroot /app /app
 
 ENTRYPOINT ["/app"]
+
