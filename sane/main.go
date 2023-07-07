@@ -31,10 +31,6 @@ func main() {
 		return c.String(http.StatusOK, "Welcome to sanit!")
 	})
 
-	e.GET("/health-check", func(c echo.Context) error {
-		return c.String(http.StatusOK, "ok")
-	})
-
 	if _, ok := os.LookupEnv("AWS_LAMBDA_FUNCTION_NAME"); ok {
 		gateway.ListenAndServe("", e)
 	} else {
